@@ -193,9 +193,13 @@ INSERT INTO example_database.todo_list (content) VALUES ('Buy eggs');
 INSERT INTO example_database.todo_list (content) VALUES ('Buy bread');
 Check data in the example_database database:
 SELECT * FROM example_database.todo_list;   
+ 
 Create a php script to display the data from the table:
 sudo nano /var/www/projectlemp/todo_list.php
+ 
 Add the following code to the file:
+ 
+ 
 <?php
 $user = "example_user";
 $password = "password";
@@ -214,13 +218,11 @@ try {
     die();
 }
 
-![sqltable](https://user-images.githubusercontent.com/61475969/204674438-86ba5cba-047f-4aec-b4b0-0e26670e2410.png)
+![sqltable](https://user-images.githubusercontent.com/61475969/204675072-f0b334f5-6133-41e9-8c52-215451745910.png)
 
 Test the php script by visiting:
 http://server_domain_or_IP/todo_list.php
-![tododatasc](https://user-images.githubusercontent.com/61475969/204674589-54795adf-9546-42da-91e1-dd946c60c132.png)
 
-
-
+![tododatasc](https://user-images.githubusercontent.com/61475969/204675107-6a67decd-a6b9-4feb-b7dc-ad9f07e643f2.png)
 
 
