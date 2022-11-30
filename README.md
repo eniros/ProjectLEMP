@@ -218,6 +218,7 @@ try {
     die();
 }
 
+
 ![sqltable](https://user-images.githubusercontent.com/61475969/204675072-f0b334f5-6133-41e9-8c52-215451745910.png)
 
 Test the php script by visiting:
