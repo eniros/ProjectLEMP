@@ -219,12 +219,16 @@ try {
 }
 
 
-![sqltable](https://user-images.githubusercontent.com/61475969/204675072-f0b334f5-6133-41e9-8c52-215451745910.png)
+mysqltable
+
+<img width="385" alt="Screenshot 2022-12-02 at 19 20 29" src="https://user-images.githubusercontent.com/61475969/205369423-dfb763ea-6240-4452-84a1-1ea011719f0e.png">
+
 
 Test the php script by visiting:
 http://server_domain_or_IP/todo_list.php
 
-![tododatasc](https://user-images.githubusercontent.com/61475969/204675107-6a67decd-a6b9-4feb-b7dc-ad9f07e643f2.png)
+<img width="385" alt="Screenshot 2022-12-02 at 19 19 36" src="https://user-images.githubusercontent.com/61475969/205369276-f08f0089-fd32-45d7-bea4-149591a0d887.png">
+
 
 
 
