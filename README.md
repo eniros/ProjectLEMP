@@ -25,14 +25,12 @@ sudo systemctl status nginx
  
  <img width="1035" alt="Screenshot 2022-11-29 at 23 35 22" src="https://user-images.githubusercontent.com/61475969/204672139-96ca6d99-d68a-47a2-a196-5adf3e01ffb1.png">
 
-Access you new Nginx web server using the following URL:
+Access you new Nginx web server using you instance ip public address;
 
-
- http://<ec2-instance-public-ip-address>
+http://<ec2-instance-public-ip-address>
   
  
- 
-  <img width="942" alt="Screenshot 2022-12-02 at 19 23 03" src="https://user-images.githubusercontent.com/61475969/205369918-8ba040bc-4837-4dc2-abf9-66b8d5a2d032.png">
+ <img width="942" alt="Screenshot 2022-12-02 at 19 23 03" src="https://user-images.githubusercontent.com/61475969/205369918-8ba040bc-4837-4dc2-abf9-66b8d5a2d032.png">
 
   
   NOTE: The EC2 Instance's public IP address can be found by running the following command:
