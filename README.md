@@ -222,4 +222,18 @@ try {
 
 
 
+MYSQLTABLE
+
+
+
+<img width="385" alt="Screenshot 2022-12-02 at 19 20 29" src="https://user-images.githubusercontent.com/61475969/205369423-dfb763ea-6240-4452-84a1-1ea011719f0e.png">
+
+
+
+Test the php script by visiting:
+http://server_domain_or_IP/todo_list.php
+
+
+<img width="385" alt="Screenshot 2022-12-02 at 19 19 36" src="https://user-images.githubusercontent.com/61475969/205369276-f08f0089-fd32-45d7-bea4-149591a0d887.png">
+
 
