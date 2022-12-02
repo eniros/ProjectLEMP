@@ -11,13 +11,13 @@ Install Nginx using the following commands:
 sudo apt update
  
 #run Nginx package installation:
-sudo install nginx
+``` sudo install nginx ```
 
 
  ![installnginxsc](https://user-images.githubusercontent.com/61475969/204671313-b05b0372-ffca-424c-9b8f-a69148982b10.png)
 
 Verify your installation by running the following command:
-sudo systemctl status nginx
+```sudo systemctl status nginx```
  
  ![nginxstatuscheck](https://user-images.githubusercontent.com/61475969/204671487-38ad138a-af25-4f92-9a40-74931bb958e8.png)
  
@@ -35,22 +35,22 @@ http://<ec2-instance-public-ip-address>
   
   NOTE: The EC2 Instance's public IP address can be found by running the following command:
 
- curl -s http://169.254.169.254/latest/meta-data/public-ipv4
+ ```curl -s http://169.254.169.254/latest/meta-data/public-ipv4```
   
 STEP 2 — INSTALLING MYSQL AND UPDATING THE FIREWALL
 
 Install MySQL using the following commands:
-sudo apt install mysql-server
+```sudo apt install mysql-server```
   
 You need to run security script that comes pre-installed with MySQL. This script will remove some insecure default settings and lock down access to your database system. Start the interactive script by running:
-sudo mysql_secure_installation
+```sudo mysql_secure_installation```
   
   This will ask you to configure the validation plugin which helps with passsword strength check. If one wants it enabaled; answer Y to the prompt If not, press any other key. <\br> NOTE: Always use a strong password for MySQL.
   
   ![mysqlinitalprompt](https://user-images.githubusercontent.com/61475969/204672441-8cc1628c-19a1-49a3-a4a6-c526b83dedab.png)
   
 Test your MySQL installation by running the following command:
-sudo mysql
+```sudo mysql```
   
   If installation is successful, you should see the following message:
   
@@ -61,7 +61,7 @@ sudo mysql
 STEP 3 — INSTALLING PHP
 
 To install these 3 packages at once, run:
-sudo apt install php-fpm php-mysql
+```sudo apt install php-fpm php-mysql```
   
 The command above will install the following packages: 
 PHP 
@@ -80,16 +80,16 @@ Note: Nginx enables a sever block by default and its configured to serve documen
 The server block in var/www/html will serve requests that doesnt match any other website. 
 
 Create the root web directory for projectlemp using ‘mkdir’ command as follows:
-sudo mkdir /var/www/projectlemp
+```sudo mkdir /var/www/projectlemp```
   
 Assign ownership of the directory to current user using ‘chown’ command as follows:
- sudo chown -R $USER:$USER /var/www/projectlemp
+ ```sudo chown -R $USER:$USER /var/www/projectlemp```
   
 Create and open a new configuration file in Nginx's sites-available directory using nano editor command as follows:
-sudo nano /etc/nginx/sites-available/projectlemp
+```sudo nano /etc/nginx/sites-available/projectlemp```
   
 Add the following lines to the file:
-#/etc/nginx/sites-available/projectlemp
+```#/etc/nginx/sites-available/projectlemp
 
 server {
     listen 80;
@@ -112,6 +112,7 @@ server {
     }
 
 }
+ ```
 Note the following:
 
 location / — The first location block includes a try_files directive, which checks for the existence of files or directories matching a URI request. If Nginx cannot find the appropriate resource, it will return a 404 error.
@@ -122,23 +123,23 @@ location ~ /\.ht { — The third location block includes a deny all directive, w
   
 Activate your configuration by linking to the config file from Nginx’s sites-enabled directory:
   
-  sudo ln -s /etc/nginx/sites-available/projectlemp /etc/nginx/sites-enabled/
+  ```sudo ln -s /etc/nginx/sites-available/projectlemp /etc/nginx/sites-enabled/```
   
 Test your configuration with the following command:
   
-sudo nginx -t
+```sudo nginx -t```
   
 Disable the default server block by removing the symbolic link from sites-enabled directory:
   
-sudo unlink /etc/nginx/sites-enabled/default   
+```sudo unlink /etc/nginx/sites-enabled/default ```  
   
 Restart Nginx using the following command:
   
-sudo systemctl reload nginx
+```sudo systemctl reload nginx```
   
 In order to access the website, we need to create an index.html file in the projectlamp directory and output a message.
   
-sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlemp/index.html
+```sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlemp/index.html```
   
 Verify the website by visiting:
   
@@ -153,7 +154,7 @@ We need to test if our Nginx can transfer .php files to PHP processor
 
 To do this; we need to open a new file called info.php within your document root in your text editor:
 
-sudo nano /var/www/projectlemp/info.php
+```sudo nano /var/www/projectlemp/info.php```
 Then add the line of code below:
 
 <?php phpinfo(); ?>
@@ -174,39 +175,38 @@ CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'passwor
 The command above creates a new user named example_user, using mysql_native_password as default authentication method
 
 Assign the user permission over the example_database database:
-GRANT ALL PRIVILEGES ON `example_database`.* TO 'example_user'@'%';
+```GRANT ALL PRIVILEGES ON `example_database`.* TO 'example_user'@'%';```
 Exit the MySQL shell and log back in as the example_user:
-exit
+```exit```
 Connect to the database using the following command:
-mysql -u example_user -p    
+```mysql -u example_user -p  ```  
 Show the list of databases:
-show databases;
+```show databases;```
 
 
 Lets create a table named todo_list in the example_database database:
-CREATE TABLE example_database.todo_list (
+```CREATE TABLE example_database.todo_list (
 item_id INT AUTO_INCREMENT,
 content VARCHAR(255),
 PRIMARY KEY(item_id)
-);
+);```
 Insert some data into the table:
-INSERT INTO example_database.todo_list (content) VALUES ('Buy milk');
+```INSERT INTO example_database.todo_list (content) VALUES ('Buy milk');
 INSERT INTO example_database.todo_list (content) VALUES ('Buy eggs');
-INSERT INTO example_database.todo_list (content) VALUES ('Buy bread');
+INSERT INTO example_database.todo_list (content) VALUES ('Buy bread');```
 Check data in the example_database database:
-SELECT * FROM example_database.todo_list;   
+```SELECT * FROM example_database.todo_list; ```  
  
 Create a php script to display the data from the table:
-sudo nano /var/www/projectlemp/todo_list.php
+```sudo nano /var/www/projectlemp/todo_list.php```
  
 Add the following code to the file:
- 
  
 <?php
 $user = "example_user";
 $password = "password";
 $database = "example_database";
-$table = "todo_list";
+$table = "todo_list"; 
 
 try {
   $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
@@ -223,11 +223,13 @@ try {
 
 mysqltable
 
+
 <img width="385" alt="Screenshot 2022-12-02 at 19 20 29" src="https://user-images.githubusercontent.com/61475969/205369423-dfb763ea-6240-4452-84a1-1ea011719f0e.png">
 
 
 Test the php script by visiting:
 http://server_domain_or_IP/todo_list.php
+
 
 <img width="385" alt="Screenshot 2022-12-02 at 19 19 36" src="https://user-images.githubusercontent.com/61475969/205369276-f08f0089-fd32-45d7-bea4-149591a0d887.png">
 
