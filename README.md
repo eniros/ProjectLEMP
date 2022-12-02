@@ -29,7 +29,8 @@ Access you new Nginx web server using the following URL:
 
  http://<ec2-instance-public-ip-address>
   
-  ![DefaultNginxpage](https://user-images.githubusercontent.com/61475969/204672263-249dada9-95ac-4996-bdc4-5696b192c2ff.png)
+  <img width="942" alt="Screenshot 2022-12-02 at 19 23 03" src="https://user-images.githubusercontent.com/61475969/205369918-8ba040bc-4837-4dc2-abf9-66b8d5a2d032.png">
+
   
   NOTE: The EC2 Instance's public IP address can be found by running the following command:
 
