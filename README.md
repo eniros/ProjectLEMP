@@ -160,7 +160,8 @@ Then add the line of code below:
 <?php phpinfo(); ?>
 We can now access this file at:
 
-http://server_domain_or_IP/info.php
+<img width="750" alt="Screenshot 2022-12-02 at 22 08 04" src="https://user-images.githubusercontent.com/61475969/205398361-ffbade12-f91b-478b-ad08-4144dab87ade.png">
+
 
   ![lempinfopage](https://user-images.githubusercontent.com/61475969/204674341-c1f2133d-5734-42cf-928e-0ba1e0501bec.png)
   
@@ -175,30 +176,33 @@ CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'passwor
 The command above creates a new user named example_user, using mysql_native_password as default authentication method
 
 Assign the user permission over the example_database database:
-```GRANT ALL PRIVILEGES ON `example_database`.* TO 'example_user'@'%';```
+GRANT ALL PRIVILEGES ON `example_database`.* TO 'example_user'@'%';
 Exit the MySQL shell and log back in as the example_user:
-```exit```
+exit
+ 
 Connect to the database using the following command:
-```mysql -u example_user -p  ```  
+mysql -u example_user -p
 Show the list of databases:
-```show databases;```
+show databases;
 
 
 Lets create a table named todo_list in the example_database database:
-```CREATE TABLE example_database.todo_list (
+CREATE TABLE example_database.todo_list (
 item_id INT AUTO_INCREMENT,
 content VARCHAR(255),
 PRIMARY KEY(item_id)
-);```
+);
+ 
 Insert some data into the table:
-```INSERT INTO example_database.todo_list (content) VALUES ('Buy milk');
+
+ INSERT INTO example_database.todo_list (content) VALUES ('Buy milk');
 INSERT INTO example_database.todo_list (content) VALUES ('Buy eggs');
-INSERT INTO example_database.todo_list (content) VALUES ('Buy bread');```
+INSERT INTO example_database.todo_list (content) VALUES ('Buy bread');
 Check data in the example_database database:
-```SELECT * FROM example_database.todo_list; ```  
+SELECT * FROM example_database.todo_list;  
  
 Create a php script to display the data from the table:
-```sudo nano /var/www/projectlemp/todo_list.php```
+sudo nano /var/www/projectlemp/todo_list.php
  
 Add the following code to the file:
  
@@ -218,11 +222,9 @@ try {
 } catch (PDOException $e) {
     print "Error!: " . $e->getMessage() . "<br/>";
     die();
-}
+}                
 
-
-
-MYSQLTABLE
+````MYSQLTABLE```
 
 
 
@@ -235,5 +237,3 @@ http://server_domain_or_IP/todo_list.php
 
 
 <img width="385" alt="Screenshot 2022-12-02 at 19 19 36" src="https://user-images.githubusercontent.com/61475969/205369276-f08f0089-fd32-45d7-bea4-149591a0d887.png">
-
-
