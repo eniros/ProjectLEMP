@@ -163,9 +163,8 @@ We can now access this file at:
 <img width="750" alt="Screenshot 2022-12-02 at 22 08 04" src="https://user-images.githubusercontent.com/61475969/205398361-ffbade12-f91b-478b-ad08-4144dab87ade.png">
 
 
-  ![lempinfopage](https://user-images.githubusercontent.com/61475969/204674341-c1f2133d-5734-42cf-928e-0ba1e0501bec.png)
   
-  STEP 6 – RETRIEVING DATA FROM MYSQL DATABASE WITH PHP (CONTINUED)
+STEP 6 – RETRIEVING DATA FROM MYSQL DATABASE WITH PHP (CONTINUED)
 
 We will create a database named example_database and a user named example_user, but you can replace these names with different values.
 
@@ -206,7 +205,7 @@ sudo nano /var/www/projectlemp/todo_list.php
  
 Add the following code to the file:
  
-<?php
+```<?php
 $user = "example_user";
 $password = "password";
 $database = "example_database";
@@ -222,9 +221,10 @@ try {
 } catch (PDOException $e) {
     print "Error!: " . $e->getMessage() . "<br/>";
     die();
-}                
+}
+```
 
-````MYSQLTABLE```
+MYSQLTABLE
 
 
 
