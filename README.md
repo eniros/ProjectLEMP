@@ -27,8 +27,11 @@ sudo systemctl status nginx
 
 Access you new Nginx web server using the following URL:
 
+
  http://<ec2-instance-public-ip-address>
   
+ 
+ 
   <img width="942" alt="Screenshot 2022-12-02 at 19 23 03" src="https://user-images.githubusercontent.com/61475969/205369918-8ba040bc-4837-4dc2-abf9-66b8d5a2d032.png">
 
   
