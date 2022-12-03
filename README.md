@@ -155,13 +155,27 @@ We need to test if our Nginx can transfer .php files to PHP processor
 To do this; we need to open a new file called info.php within your document root in your text editor:
 
 ```sudo nano /var/www/projectlemp/info.php```
+
 Then add the line of code below:
 
-<?php phpinfo(); ?>
+```<?php phpinfo(); ?>```
+
 We can now access this file at:
+
+```http://server_domain_or_IP/info.php```
 
 <img width="750" alt="Screenshot 2022-12-02 at 22 08 04" src="https://user-images.githubusercontent.com/61475969/205398361-ffbade12-f91b-478b-ad08-4144dab87ade.png">
 
+Note the following:
+
+location / — The first location block includes a try_files directive, which checks for the existence of files or directories matching a URI request. If Nginx cannot find the appropriate resource, it will return a 404 error.
+location ~ \.php$ — The second location block includes a fastcgi_pass directive, which tells Nginx to pass PHP requests to the PHP-FPM process manager.
+location ~ /\.ht { — The third location block includes a deny all directive, which tells Nginx to deny all requests to files or directories that begin with a dot. This prevents Nginx from serving files or directories that are hidden or system-specific.
+Activate your configuration by linking to the config file from Nginx’s sites-enabled directory:
+
+<img width="561" alt="Screenshot 2022-12-03 at 00 55 14" src="https://user-images.githubusercontent.com/61475969/205433634-fffadffc-53eb-4a6b-b689-1af41500f3f8.png">
+
+<img width="1175" alt="Screenshot 2022-12-03 at 00 43 54" src="https://user-images.githubusercontent.com/61475969/205433650-bc2714b5-4b79-4c4d-895b-a1d2b3d6f118.png">
 
   
 STEP 6 – RETRIEVING DATA FROM MYSQL DATABASE WITH PHP (CONTINUED)
