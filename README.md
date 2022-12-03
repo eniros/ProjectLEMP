@@ -175,7 +175,7 @@ Activate your configuration by linking to the config file from Nginx’s sites-e
 
 <img width="561" alt="Screenshot 2022-12-03 at 00 55 14" src="https://user-images.githubusercontent.com/61475969/205433634-fffadffc-53eb-4a6b-b689-1af41500f3f8.png">
 
-<img width="1175" alt="Screenshot 2022-12-03 at 00 43 54" src="https://user-images.githubusercontent.com/61475969/205433650-bc2714b5-4b79-4c4d-895b-a1d2b3d6f118.png">
+
 
   
 STEP 6 – RETRIEVING DATA FROM MYSQL DATABASE WITH PHP (CONTINUED)
